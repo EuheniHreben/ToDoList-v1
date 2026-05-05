@@ -78,6 +78,7 @@ body.dark {
 html,
 body {
   overflow-x: hidden;
+  background: var(--body-bg);
 }
 
 body {
