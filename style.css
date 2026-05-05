@@ -81,8 +81,9 @@ body {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
+  padding: 0;
 
   display: flex;
   flex-direction: column;
@@ -152,17 +153,13 @@ input:focus {
   cursor: pointer;
   margin: 5px 0 10px;
   padding: 10px;
-
   border: none;
   border-radius: 8px;
-
   background-color: var(--accent);
   color: var(--btn-text);
-
   white-space: nowrap;
   position: relative;
   top: 0;
-
   transition: var(--t-fast);
 }
 
