@@ -82,7 +82,7 @@ body {
 }
 
 body {
-  min-height: 100%;
+  min-height: 100dvh;
   margin: 0;
   padding: 0;
 
@@ -453,12 +453,12 @@ li.remove {
   inset: 0;
   z-index: 15;
   background: rgba(0, 0, 0, 0.8);
-  opacity: 0;
+  display: none;
   transition: opacity 0.2s ease;
 }
 
 .backdrop.show {
-  opacity: 1;
+  display: block;
 }
 
 .fa-xmark {
