@@ -114,6 +114,13 @@ body {
   box-shadow: var(--shadow);
 }
 
+.todo__title {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
+}
+
 /* =========================
    Form
 ========================= */
@@ -505,7 +512,7 @@ li.remove {
    Responsive
 ========================= */
 
-@media (max-width: 380px) {
+@media (max-width: 360px) {
   .todo {
     padding: 10px;
   }
@@ -530,7 +537,6 @@ li.remove {
 
   .todo__title {
     font-size: 22px;
-    white-space: nowrap;
   }
 
   .settings__btn {
