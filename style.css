@@ -82,7 +82,7 @@ body {
 }
 
 body {
-  height: 100dvh;
+  min-height: 100dvh;
   margin: 0;
   padding: 0;
 
@@ -104,10 +104,9 @@ body {
    Todo Card
 ========================= */
 .todo {
-  width: 90%;
-  max-width: var(--container-max);
+  width: min(400px, calc(100vw - 32px));
   min-height: 160px;
-  padding: 16px;
+  padding: 20px;
 
   background: var(--card-bg);
   border-radius: var(--radius);
@@ -121,6 +120,7 @@ body {
 .form {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
   margin-bottom: 10px;
 }
@@ -354,10 +354,10 @@ li.remove {
 }
 
 .settings__btn {
-  width: 46px;
-  height: 46px;
+  width: 60px;
+  height: 60px;
   border-radius: 999px;
-  font-size: 20px;
+  font-size: 24px;
 
   border: 2px solid color-mix(in srgb, var(--accent) 80%, transparent);
   background: var(--settings-btn-bg);
@@ -373,7 +373,6 @@ li.remove {
 }
 
 .settings__btn i {
-  width: 20px;
   display: inline-flex;
   justify-content: center;
   transition:
@@ -387,27 +386,25 @@ li.remove {
 
 .settings__panel {
   position: absolute;
-  margin-top: 10px;
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: min(340px, calc(100vw - 32px));
   padding: 12px 20px;
 
-  top: 54px;
-  left: 50%;
-
-  width: 340px;
-
   border-radius: 12px;
-  border: 2px solid color-mix(in srgb, var(--accent) 80%, transparent);
   background: var(--settings-panel-bg);
+  border: 2px solid color-mix(in srgb, var(--accent) 80%, transparent);
 
   box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.7);
 
   opacity: 0;
-  transform: translateX(-50%) scale(0.8);
+  transform: scale(0.8);
   pointer-events: none;
-  transform-origin: top center;
+
   transition:
-    opacity 0.18s ease,
-    transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .settings:not(.open) .settings__panel {
@@ -416,7 +413,7 @@ li.remove {
 
 .settings.open .settings__panel {
   opacity: 1;
-  transform: translateX(-95%) scale(1);
+  transform: scale(1);
   pointer-events: auto;
   visibility: visible;
 }
@@ -424,7 +421,6 @@ li.remove {
 .settings__row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   gap: 12px;
   padding: 8px 0;
@@ -433,10 +429,14 @@ li.remove {
 .settings__label {
   font-size: 14px;
   opacity: 0.9;
+  width: 110px;
+  flex-shrink: 0;
 }
 
 .settings__select {
-  width: 180px;
+  flex: 1;
+  min-width: 0;
+
   padding: 8px;
   cursor: pointer;
 
@@ -505,7 +505,7 @@ li.remove {
    Responsive
 ========================= */
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
   .todo {
     padding: 10px;
   }
@@ -515,8 +515,28 @@ li.remove {
   }
 
   .btn--type-first {
-    padding: 8px 16px;
+    padding: 10px 20px;
     font-size: 14px;
+  }
+
+  .settings__row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .settings__select {
+    width: 100%;
+  }
+
+  .todo__title {
+    font-size: 22px;
+    white-space: nowrap;
+  }
+
+  .settings__btn {
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
   }
 }
 
