@@ -101,9 +101,9 @@
         ? raw.theme
         : "time",
       sort: raw.sort === "alpha" ? "alpha" : "added",
-      fontSize: ["18", "22", "26"].includes(String(raw.fontSize))
+      fontSize: ["16", "20", "24"].includes(String(raw.fontSize))
         ? String(raw.fontSize)
-        : "22",
+        : "20",
       sound: raw.sound === "off" ? "off" : "on",
     };
   };
